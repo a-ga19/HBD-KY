@@ -4,8 +4,7 @@
     --bts-purple-light: #a29bfe;
     --esperanza-verde: #d4f3e6;
     --amor-rosa: #ffe5ec;
-    /* Degradado místico: Púrpura profundo, violeta pastel y destellos verdes de esperanza */
-    --fondo-degrade: linear-gradient(135deg, #2d1b4e 0%, #6c5ce7 50%, #a8e6cf 100%);
+    --fondo-degrade: linear-gradient(135deg, #1e0f33 0%, #4834d4 50%, #6ab04c 100%);
     --texto-claro: #f5f6fa;
 }
 
@@ -16,7 +15,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     background: var(--fondo-degrade);
     min-height: 100vh;
     min-height: -webkit-fill-available;
@@ -37,9 +37,9 @@ html {
     top: 15px;
     right: 15px;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     display: flex;
@@ -47,13 +47,14 @@ html {
     gap: 6px;
     font-size: 0.75rem;
     color: var(--texto-claro);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     opacity: 0;
     transition: opacity 1s;
     pointer-events: none;
+    letter-spacing: 0.5px;
 }
 
-/* --- NUEVO EFECTO: PÉTALOS Y DESTELLOS MÍSTICOS (TAKE TWO) --- */
+/* --- PÉTALOS Y DESTELLOS MÍSTICOS --- */
 .atmosfera-take-two {
     position: absolute;
     width: 100%;
@@ -66,9 +67,8 @@ html {
 
 .petalo {
     position: absolute;
-    background: radial-gradient(circle, rgba(162, 155, 254, 0.7) 0%, rgba(212, 243, 230, 0) 70%);
+    background: radial-gradient(circle, rgba(162, 155, 254, 0.6) 0%, rgba(212, 243, 230, 0) 70%);
     border-radius: 50% 0 50% 50%;
-    /* Forma sutil de pétalo/hoja flotante */
     animation: elevar 7s infinite linear;
     opacity: 0.5;
 }
@@ -78,15 +78,8 @@ html {
         transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.8);
         opacity: 0;
     }
-
-    10% {
-        opacity: 0.6;
-    }
-
-    90% {
-        opacity: 0.6;
-    }
-
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
     100% {
         transform: translateY(-5vh) translateX(50px) rotate(360deg) scale(1.2);
         opacity: 0;
@@ -107,10 +100,11 @@ html {
     color: var(--texto-claro);
     font-size: 1.3rem;
     margin-bottom: 25px;
-    font-weight: bold;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     animation: latido 1.5s infinite;
     line-height: 1.4;
+    letter-spacing: 0.5px;
 }
 
 .caja {
@@ -119,35 +113,17 @@ html {
     background: var(--bts-purple);
     position: relative;
     cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     margin: 0 auto;
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Cintas del regalo en verde menta esperanza */
-.caja::before,
-.caja::after {
-    content: '';
-    position: absolute;
-    background: var(--esperanza-verde);
-}
-
-.caja::before {
-    width: 26px;
-    height: 100%;
-    left: 52px;
-    top: 0;
-}
-
-.caja::after {
-    width: 100%;
-    height: 26px;
-    left: 0;
-    top: 52px;
-}
+.caja::before, .caja::after { content: ''; position: absolute; background: var(--esperanza-verde); }
+.caja::before { width: 26px; height: 100%; left: 52px; top: 0; }
+.caja::after { width: 100%; height: 26px; left: 0; top: 52px; }
 
 .tapa {
     position: absolute;
@@ -156,21 +132,14 @@ html {
     background: var(--bts-purple-light);
     top: -15px;
     left: -10px;
-    border-radius: 5px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.25);
     z-index: 2;
 }
 
 @keyframes latido {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.03);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
 }
 
 /* --- PANTALLA PRINCIPAL --- */
@@ -183,55 +152,64 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 70px 20px 20px 20px;
+    padding: 60px 20px 20px 20px;
 }
 
 .titulo-esperanza {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
     color: var(--texto-claro);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
     max-width: 90%;
     opacity: 0;
     transform: translateY(-20px);
     transition: all 1s ease 0.5s;
     z-index: 20;
-    line-height: 1.3;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
-/* Contenedor central de las cartas */
+/* --- CONTENEDOR DE TARJETAS MÁS GRANDE --- */
 .pila-fotos {
     position: relative;
     width: 100%;
-    max-width: 290px;
-    height: 380px;
+    max-width: 330px; /* Dimensiones ampliadas */
+    height: 440px; 
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    transform-style: preserve-3d;
     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* --- TARJETAS ESTILIZADAS COLOR TEMÁTICO (GLASSMORPHISM PÚRPURA) --- */
 .carta-foto {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: white;
-    border-radius: 15px;
-    padding: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s, width 0.6s, height 0.6s;
+    /* Color de fondo lila traslúcido fusionado con la temática */
+    background: rgba(235, 230, 255, 0.75); 
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 15px 40px rgba(26, 12, 59, 0.3);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s, z-index 0.1s;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
 
+/* --- FOTOS MÁS GRANDES --- */
 .marco-imagen {
     width: 100%;
-    height: 75%;
-    background: #eee;
-    border-radius: 8px;
+    height: 78%; /* Espacio de foto expandido */
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
     overflow: hidden;
-    transition: height 0.6s;
 }
 
 .marco-imagen img {
@@ -240,31 +218,40 @@ html {
     object-fit: cover;
 }
 
+/* --- TEXTO TOTALMENTE CURSIVO --- */
 .texto-carta {
-    height: 25%;
+    height: 22%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: #4f5d75;
-    font-size: 0.9rem;
-    padding-top: 5px;
-    line-height: 1.2;
+    font-family: 'Playfair Display', serif;
+    font-style: italic; /* Letra cursiva estilizada */
+    font-weight: 400;
+    color: #1e0f33;
+    font-size: 1.05rem;
+    padding: 8px 4px 0 4px;
+    line-height: 1.3;
+}
+
+/* --- ESTILOS EXCLUSIVOS DEL MODO CARRUSEL --- */
+.modo-carrusel .carta-foto {
+    pointer-events: auto; /* Reactiva los clics en modo carrusel */
 }
 
 /* Botón final de deseos */
 .btn-deseo {
-    background: linear-gradient(45deg, var(--bts-purple), var(--esperanza-verde));
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    background: linear-gradient(45deg, var(--bts-purple), #8ac9a7);
     border: none;
     padding: 14px 28px;
     border-radius: 25px;
-    color: #2d1b4e;
-    font-size: 1rem;
-    font-weight: bold;
+    color: #fff;
+    font-size: 0.95rem;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 5px 20px rgba(108, 92, 231, 0.4);
     transition: transform 0.3s, background 0.5s;
     opacity: 0;
     pointer-events: none;
@@ -275,99 +262,17 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Clases de estado */
-.abierto {
-    transform: scale(0);
-    opacity: 0;
-    pointer-events: none;
-}
+/* Clases de estado estructurales */
+.abierto { transform: scale(0); opacity: 0; pointer-events: none; }
+.mostrar { display: flex !important; }
 
-.mostrar {
-    display: flex !important;
-}
-
-/* --- COLLAGE CENTRADO Y GRANDE --- */
-.modo-collage .pila-fotos {
-    max-width: 95%;
-    height: 55vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 16px;
-    padding: 5px;
-    align-content: center;
-    justify-content: center;
-}
-
-.modo-collage .carta-foto {
-    position: relative;
-    width: 100% !important;
-    height: 100% !important;
-    aspect-ratio: 3 / 4;
-    max-height: 190px;
-    pointer-events: none;
-    padding: 6px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-}
-
-.modo-collage .texto-carta {
-    display: none;
-}
-
-.modo-collage .marco-imagen {
-    height: 100%;
-}
-
-/* Contenedor invisible para la API de YouTube */
-#reproductor-oculto {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Optimización para Tablets o Computadoras */
+/* Optimización adaptativa para pantallas grandes de escritorio */
 @media (min-width: 600px) {
-    .titulo-esperanza {
-        font-size: 1.8rem;
-    }
-
-    .pila-fotos {
-        max-width: 320px;
-        height: 420px;
-    }
-
-    .modo-collage .pila-fotos {
-        max-width: 750px;
-        grid-template-columns: repeat(4, 1fr);
-        height: auto;
-    }
-
-    .modo-collage .carta-foto {
-        max-height: 250px;
-    }
-
-    .instruccion {
-        font-size: 1.5rem;
-    }
-
-    .caja {
-        width: 150px;
-        height: 150px;
-    }
-
-    .caja::before {
-        width: 30px;
-        left: 60px;
-    }
-
-    .caja::after {
-        height: 30px;
-        top: 60px;
-    }
-
-    .tapa {
-        width: 170px;
-        height: 40px;
-    }
+    .titulo-esperanza { font-size: 2.2rem; }
+    .pila-fotos { max-width: 360px; height: 480px; }
+    .instruccion { font-size: 1.5rem; }
+    .caja { width: 150px; height: 150px; }
+    .caja::before { width: 30px; left: 60px; }
+    .caja::after { height: 30px; top: 60px; }
+    .tapa { width: 170px; height: 40px; }
 }
