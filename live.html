@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡To my berry! ✨</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="reproductor-oculto"></div>
+
+    <div class="contenedor-musica" id="barra-musica">
+        <span>🎵 Take Two - BTS </span>
+    </div>
+
+    <div class="atmosfera-take-two" id="atmosfera"></div>
+
+    <div class="contenedor-regalo" id="pantalla-regalo">
+        <div class="instruccion">To the SPICE in our lives... ¡Abra aquí!</div>
+        <div class="caja" onclick="abrirRegalo()">
+            <div class="tapa"></div>
+        </div>
+    </div>
+
+    <div class="escenario-recuerdos" id="escenario">
+        <h1 class="titulo-esperanza" id="titulo">¡¡Feliz Cumpleaños!!</h1>
+
+        <div class="pila-fotos" id="pila">
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/10.jpeg" alt="Recuerdo 10">
+                </div>
+                <div class="texto-carta">You are my silver lining. ¡Feliz vida! 💕</div>
+            </div>
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/9.jpeg" alt="Recuerdo 9">
+                </div>
+                <div class="texto-carta">Gracias por ser un refugio y mi alegría más bonita. </div>
+            </div>
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/8.jpeg" alt="Recuerdo 8">
+                </div>
+                <div class="texto-carta">Que nunca le falten razones para sonreír. </div>
+            </div>
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/7.jpeg" alt="Recuerdo 7">
+                </div>
+                <div class="texto-carta">Usted es ese ‘algo bonito’ que no se explica. </div>
+            </div>
+
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/6.jpeg" alt="Recuerdo 6">
+                </div>
+                <div class="texto-carta">Que nunca le falten sueños por cumplir. </div>
+            </div>
+
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/5.jpeg" alt="Recuerdo 5">
+                </div>
+                <div class="texto-carta"> Que todo lo bueno la encuentre sin buscarlo. </div>
+            </div>
+
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/4.jpeg" alt="Recuerdo 4">
+                </div>
+                <div class="texto-carta"> Que la vida nos regale muchos momentos más juntas. </div>
+            </div>
+
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/3.jpeg" alt="Recuerdo 3">
+                </div>
+                <div class="texto-carta">Con usted todo se siente más tranquilo y bonito. </div>
+            </div>
+
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/2.jpeg" alt="Recuerdo 2">
+                </div>
+                <div class="texto-carta">Me alegra tanto que exista en este mundo. </div>
+            </div>
+
+            <div class="carta-foto" onclick="pasarCarta(this)">
+                <div class="marco-imagen">
+                    <img src="./fotos/1.jpeg"    alt="Recuerdo 1">
+                </div>
+                <div class="texto-carta">Hoy celebremos su existencia y el amor tan lindo que irradia. </div>
+            </div>
+        </div>
+
+        <button class="btn-deseo" id="btnFinal" onclick="lanzarDeseo()">Pida un deseo </button>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
